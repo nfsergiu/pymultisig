@@ -5,8 +5,9 @@ class Responder:
     def __init__(self):
         self.message = "yes"
 
-    def respond(self):
-        print("Response " + self.message)
+    def loop(self, message):
+        while True:
+            print("Still in loop: " + message)
 
 
 if __name__ == '__main__':
@@ -14,6 +15,6 @@ if __name__ == '__main__':
     namespace = manager.Namespace()
     responder = Responder()
 
-    process = multiprocessing.Process(target=responder.respond)
+    process = multiprocessing.Process(target=responder.loop, args=("yes, sir", ))
     process.start()
     process.join()
