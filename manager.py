@@ -18,3 +18,15 @@ class Manager:
                 print(message)
         finally:
             self.listener.close()
+
+    def decode(self, message):
+        pass
+
+    def new_slot(self, class_name, method):
+        pass
+
+    def register_slot(self, signal, slot):
+        pass
+
+    def emit(self, slot):
+        pass
